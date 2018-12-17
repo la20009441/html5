@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script> 
+
+
+function playVid() { 
+   var vid = document.getElementById("mp4Video"); 
+    vid.play(); 
+} 
+
+function pauseVid() { 
+    var vid = document.getElementById("mp4Video"); 
+    vid.pause(); 
+} 
+</script> 
+  <style>
+  /*
+  .header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+  background: #555;
+}
+
+.header h2 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+}*/
+  video {
+    width: 80%;
+    height: auto;
+}
+h2 {
+    font-size: 46pt;
+    line-height: 10px;
+    padding: 10px 0;
+}
+  </style>
+</head>
+<body>
+ 
+<div class="container">
+  
+  <div class="panel-group">
+   
+
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+	  <div style="/* width: 150px; */ height: 163px;margin-left: 917px;"><img src="xena_logo.jpg" alt="logo" width="206" /></div>
+<div >
+<h2>Awesome Online videos</h2>
+</div>
+</div>
+	  
+      <div class="panel-body">
+	  <div     style="text-align: center;">
+	  <video id="mp4Video" width="400" controls>
+  <source src="https://www.w3schools.com/css/mov_bbb.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML5 video.
+</video>
+	  <div>
+	  
+
+<p>Resize the browser window to see how the size of the video player will scale.</p>
+	  <button onclick="playVid()" type="button" class="btn btn-primary">Play Video</button>
+<button onclick="pauseVid()" type="button" class="btn btn-primary">Pause Video</button><br> 
+	  </div>
+    </div>
+
+    
+  </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>

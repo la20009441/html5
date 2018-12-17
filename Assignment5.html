@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+        axisY:{
+		title: "Runs"
+        },
+        axisX:{
+		title: "Overs"
+        },
+      data: [
+      {        
+        type: "line",
+        
+        dataPoints: [
+        { x: 5, y: 40 },
+        { x: 10, y: 75},
+        { x: 15, y: 140 },
+		{ x: 20, y: 210 }
+        ]
+      }
+      ]
+    });
+
+    chart.render();
+  }
+  </script>
+  <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+</head>
+<body>
+ 
+<div class="container">
+  
+  <div class="panel-group">
+   
+
+    <div class="panel panel-primary">
+      <div class="panel-heading"><h1 style="text-align:center;">Board of Control for Cricket in India<h1></div>
+      <div class="panel-body">
+	<div id="chartContainer" style="height: 500px; width: 80%;">
+  </div>
+	  </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

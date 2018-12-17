@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Assignment 1</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<style>
+
+</style>
+<script>
+ 
+function validateForm() {
+ var quantity=document.getElementById("quantity").value;
+ var ticker=document.getElementById("ticker").value;
+ var errordiv = document.getElementById("errordiv");
+ var successdiv = document.getElementById("successdiv");;
+ successdiv.style.display = "none";
+ if(ticker ==''){
+ errordiv.style.display = "block";
+ document.getElementById("errormsg").innerHTML = "Please Enter Ticker";
+ document.getElementById("ticker").focus();
+ return false;
+ } else if(!isNaN(ticker)){
+ errordiv.style.display = "block";
+ document.getElementById("errormsg").innerHTML = "Ticker can't be a number";
+ document.getElementById("ticker").focus();
+ return false;
+ } 
+ 
+ 
+ if(quantity ==''){
+ errordiv.style.display = "block";
+ document.getElementById("errormsg").innerHTML = "Please Enter Quantity";
+ document.getElementById("quantity").focus();
+  return false;
+ } else if(isNaN(quantity)){
+ errordiv.style.display = "block";
+ document.getElementById("errormsg").innerHTML = "Please Enter a number for Quantity field";
+ document.getElementById("quantity").focus();
+ return false;
+ } else if(quantity < 10 || quantity > 100) {
+ errordiv.style.display = "block";
+ document.getElementById("errormsg").innerHTML = "Please enter quantity range between 10 - 100";
+ document.getElementById("quantity").value='';
+ document.getElementById("quantity").focus();
+  return false;
+ } else if(quantity%10 != 0){
+ errordiv.style.display = "block";
+ document.getElementById("errormsg").innerHTML = "Please Enter multipules of 10";
+ document.getElementById("quantity").value='';
+ return false;
+ } else {
+ document.getElementById("successmsg").innerHTML = "Thank you for purchasing "+ticker+" shares";
+ document.getElementById("successdiv").style.display = "block";
+ document.getElementById("ticker").value='';
+ document.getElementById("quantity").value='';
+ errordiv.style.display = "none";
+ }
+}
+</script>
+</head>
+
+<body>
+<div class="table-responsive" style=" margin-top: 80px;margin-left: 437px;">
+  <table class="table table-sm table-bordered table-striped " style="width:33% !important;">
+   <thead>
+    <tr>
+      
+      <th scope="col">TICKER</th>
+      <th scope="col">PRICE</th>
+     
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      
+     <td >WIPRO</td>
+      <td >298.45</td>
+      
+    </tr>
+    <tr>
+      
+      <td >INFY</td>
+      <td >949.95</td>
+     
+    </tr>
+    <tr>
+     
+       <td >TCS</td>
+      <td >2713.70</td>
+    </tr>
+	<tr>
+      <td >TECHM</td>
+      <td >485.85</td>
+    </tr>
+  </tbody>
+  </table>
+</div>
+<h1 align='center'>Stock Trading</h1>
+<div class="alert alert-danger" role="alert" id="errordiv" style="display:none">
+  <span id="errormsg">
+</div>
+<div class="table-success bg-success" role="alert" id="successdiv" style="display:none">
+  <span id="successmsg">
+</div>
+
+<div class="table-responsive" >
+<table class="table table-sm table-hover table-bordered" >
+<tbody>
+   <tr>
+      <td >Ticker:</td>
+      <td ><input type='text' class="form-control" placeholder="Ticker" id="ticker"></td> 
+    </tr>
+	 <tr>
+      <td >Quantity:</td>
+      <td><input type='text' class="form-control" placeholder="Quantity" id="quantity"></td>
+    </tr>
+	 <tr>
+      <td ><button onclick="validateForm()">Submit</button> </td>
+     <td ></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  window.onload = function () {
+
+    var chart = new CanvasJS.Chart("chartContainer",
+    {
+        axisY:{
+		title: "In lakh tons",
+            valueFormatString:"#######",
+        },
+        axisX:{
+           valueFormatString:"####",
+        },
+      data: [
+      {        
+        type: "line",
+        xValueFormatString:"Year ####",
+        yValueFormatString:"####### tons",
+        dataPoints: [
+        { x: 2001, y: 281 },
+        { x: 2002, y: 277},
+        { x: 2003, y: 275 },
+        { x: 2004, y: 457 },
+        { x: 2005, y: 200 },
+        { x: 2006, y: 280 },
+        { x: 2007, y: 150 }
+        
+        ]
+      }
+      ]
+    });
+
+    chart.render();
+  }
+  </script>
+  <script type="text/javascript" src="js/canvasjs.min.js"></script>
+</head>
+<body>
+ 
+<div class="container">
+  
+  <div class="panel-group">
+   
+
+    <div class="panel panel-primary">
+      <div class="panel-heading"><h1 style="text-align:center;">Agricultural Statistical Department of GOI<h1></div>
+      <div class="panel-body">
+	<div id="chartContainer" style="height: 300px; width: 100%;">
+  </div>
+	  </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
